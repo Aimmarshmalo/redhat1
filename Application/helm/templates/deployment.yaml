@@ -7,21 +7,21 @@ spec:
   replica: {{ .Values.ReplicaNumber }}
   selector: 
     matchLabels: {{ .Chart.Name }}
-# set your lab user name
-      app: {{ .Chart.Name }}
+
+  app: {{ .Chart.Name }}
   template:
     metadata:
       labels: {{ .Chart.Name }}
-# set your lab user name
-        app: {{ .Chart.Name }}
-    spec:
+
+  app: {{ .Chart.Name }}
+  spec:
       containers: 
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: {{ .Chart.Name }}
           ports: {{ .Values.containers.containerPort }}
-            - containerPort: {{ .Values.containers.containerPort }}
-              protocol: TCP
+          containerPort: {{ .Values.containers.containerPort }}
+          protocol: TCP
           imagePullPolicy: IfNotPresent
           contianer: {{ .Chart.Name }}
 # Update with the image you build in part 1
@@ -35,6 +35,6 @@ spec:
       maxSurge: 25%
   revisionHistoryLimit: 10
 
-  
+
 
 
