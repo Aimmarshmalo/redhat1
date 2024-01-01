@@ -6,9 +6,8 @@ metadata:
 spec:
   replica: {{ .Values.ReplicaNumber }}
   selector: 
-    matchLabels: {{ .Chart.Name }}
-
-  app: {{ .Chart.Name }}
+    matchLabels:
+      app: {{ .Chart.Name }}
   template:
     metadata:
       labels: {{ .Chart.Name }}
