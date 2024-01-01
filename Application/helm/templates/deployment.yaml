@@ -13,7 +13,7 @@ spec:
       labels: 
         app: {{ .Chart.Name }}
   spec:
-      containers: 
+    containers: 
       - resources: {}
         terminationMessagePath: /dev/termination-log
         name: {{ .Chart.Name }}
