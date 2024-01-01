@@ -17,11 +17,11 @@ spec:
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: {{ .Chart.Name }}
-          ports: {{ .Values.containers.containerPort }}
-          containerPort: {{ .Values.containers.containerPort }}
-          protocol: TCP
-          imagePullPolicy: IfNotPresent
-# Update with the image you build in part 1
+          ports:
+            - containerPort: {{ .Values.containers.containerPort }}
+              protocol: TCP
+          imagePullPolicy: Always
+          terminationMessagePolicy: File
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
