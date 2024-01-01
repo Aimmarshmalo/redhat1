@@ -10,9 +10,8 @@ spec:
       app: {{ .Chart.Name }}
   template:
     metadata:
-      labels: {{ .Chart.Name }}
-
-  app: {{ .Chart.Name }}
+      labels: 
+        app: {{ .Chart.Name }}
   spec:
       containers: 
         - resources: {}
