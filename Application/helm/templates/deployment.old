@@ -3,11 +3,6 @@ apiVersion: apps/v1
 metadata:
   name: {{ .Chart.Name }}
 spec:
-  volumes:
-        - name: index-html
-          configMap:
-            name: '{{ .Chart.Name }}-html'
-            defaultMode: 420      
   replicas: {{ .Values.ReplicaNumber }}
   selector:
     matchLabels:
@@ -16,16 +11,8 @@ spec:
     metadata:
       labels:
         app: {{ .Chart.Name }}
-        spec:
-            volumes:
-        - name: index-html
-          configMap:
-            name: '{{ .Chart.Name }}-html'
-            defaultMode: 420
-      containersi:
-          volumeMounts:
-          - name: index-html
-            mountPath: /tmp/html # this will mount the html.index file to it application location    
+    spec:
+      containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: {{ .Chart.Name }}
