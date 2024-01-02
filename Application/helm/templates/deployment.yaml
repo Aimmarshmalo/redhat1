@@ -18,7 +18,7 @@ spec:
             name: '{{ .Chart.Name }}-html'
             defaultMode: 420
       containers:
-       - resources: {}
+      - resources: {}
           livenessProbe:
             httpGet:
               path: /health/liveliness
