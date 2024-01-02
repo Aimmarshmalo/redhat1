@@ -1,4 +1,4 @@
-deploy1: 
+deploy2: 
   ReplicaNumber: 1
 
   containers:
@@ -8,3 +8,5 @@ deploy1:
 
   service:
       servicePort: 8080
+
+
