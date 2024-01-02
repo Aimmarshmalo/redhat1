@@ -19,7 +19,7 @@ spec:
             defaultMode: 420
       containers:
       - resources: {}
-          livenessProbe:
+        livenessProbe:
             httpGet:
               path: /health/liveliness
               port: {{ .Values.containers.containerPort }}
