@@ -39,10 +39,10 @@ spec:
             periodSeconds: 10 # the abount of time to wait between checks
             successThreshold: 1 # count to decalre seccessfull 
             failureThreshold: 3 # count to decalre failure 
-            env:
-              - name: PORT
-                value: {{ .Values.containers.containerPort | quote }}
-          terminationMessagePath: /dev/termination-log
+        env:
+        - name: PORT
+        value: {{ .Values.containers.containerPort | quote }}
+        erminationMessagePath: /dev/termination-log
           name: {{ .Chart.Name }}
           ports:
             - containerPort: {{ .Values.containers.containerPort }}
