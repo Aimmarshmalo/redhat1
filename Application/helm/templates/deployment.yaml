@@ -43,8 +43,8 @@ spec:
         - name: PORT
         value: {{ .Values.containers.containerPort | quote }}
         erminationMessagePath: /dev/termination-log
-          name: {{ .Chart.Name }}
-          ports:
+        name: {{ .Chart.Name }}
+        ports:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
           imagePullPolicy: Always
